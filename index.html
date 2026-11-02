@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -149,6 +149,8 @@ img,svg{max-width:100%}
 .tw-big{position:relative;width:min(78vw,330px);margin:34px auto 0}
 .tw-big::before{content:"";position:absolute;inset:-16% -22% -4%;background:radial-gradient(closest-side,rgba(255,80,130,.32),transparent 72%);z-index:-1;animation:beat 3.4s ease-in-out infinite}
 .tw-big .tf{animation:bob 4.5s ease-in-out infinite alternate}
+.feat-img{display:block;width:auto;max-width:min(92vw,780px);height:auto;margin:clamp(34px,6vw,60px) auto 0;border-radius:0;-webkit-user-drag:none}
+@media (max-width:600px){.feat-img{max-width:100%}}
 .mq{position:relative;overflow:hidden;padding:26px 0 40px;background:linear-gradient(180deg,#250B18,#2c0d1e)}
 .mq-track{display:flex;width:max-content;align-items:center;animation:mq 30s linear infinite;will-change:transform}
 .mq-half{display:flex;flex:none;align-items:center}
@@ -451,10 +453,11 @@ footer{padding:34px 18px 44px;text-align:center;background:#1c0812;font-size:14p
     <div class="wrap">
       <h2 class="rv">I Know It's Your Periods Day. Let Me Take Care Of It. ❤️</h2>
       <div class="tw-big rv"><div class="tf" id="welcomeTeddy"></div></div>
+      <img class="feat-img rv" src="img1.jpg" alt="Our memory" decoding="async">
     </div>
   </section>
 
-  <!-- 5. INFINITE IMAGE STRIP (1.png – 10.png, left to right, fast) -->
+  <!-- 5. INFINITE IMAGE STRIP (1.png – 10.png, left to right, slow) -->
   <div class="mq" aria-hidden="true"><div class="mq-track" id="mqTrack"></div></div>
 
   <!-- 6. PERIOD CARE & EMOTIONAL SUPPORT -->
@@ -598,7 +601,7 @@ footer{padding:34px 18px 44px;text-align:center;background:#1c0812;font-size:14p
       <!-- TEMPORARY SAMPLE SURPRISE — edit freely -->
       <div class="sur-card" id="surCard">
         <small>Your Surprise</small>
-        One free night of movies, warm blankets and all your favourite snacks, delivered by me whenever you want. Just say the word, my love.
+        i know how you feel, you bleed, vommit, or you are in pain, I will care you in every situation, Dont Worry My Gurl
       </div>
       <button class="sur-reset" id="surReset">Close the box and open it again</button>
     </div>
@@ -618,6 +621,7 @@ footer{padding:34px 18px 44px;text-align:center;background:#1c0812;font-size:14p
         <li class="rv"><span class="n">5</span><p>I'll always try to make your difficult days easier.</p></li>
       </ul>
       <div class="prom-roses" id="promRoses"></div>
+      <img class="feat-img rv" src="img2.jpg" alt="Our memory" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -866,7 +870,7 @@ footer{padding:34px 18px 44px;text-align:center;background:#1c0812;font-size:14p
         for (let r = 0; r < R; r++) list.forEach(i => { const im = new Image(); im.src = i.src; im.alt = ''; im.draggable = false; im.className = 'mq-i'; im.style.height = h + 'px'; im.style.width = (i.ratio * h) + 'px'; im.style.marginRight = gap + 'px'; half.appendChild(im); });
         return half; };
       track.replaceChildren(mk(), mk());
-      track.style.animationDuration = ((setW * R) / 340).toFixed(2) + 's'; /* ~340px per second: fast */
+      track.style.animationDuration = ((setW * R) / 85).toFixed(2) + 's'; /* ~85px per second: slow and smooth */
     });
   }
   let rzT; window.addEventListener('resize', () => { clearTimeout(rzT); rzT = setTimeout(() => { if (mainReady && Math.abs(window.innerWidth - mqW) > 80) initMarquee(); if (mainReady) layoutLetters(); }, 300); });
